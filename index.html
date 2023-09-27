@@ -7,16 +7,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- link to fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">    
     <title>Document</title>
 </head>
 <body>
 <header>
     <div id="GameGenius">
-        <h1>Game Genius!</h1>
+        <a id="gameGeniusTitle" href="#">Game Genius!</a>
     </div>
+    <!-- This is the containerSearch, contains search input, another div with the filters and a button to submit the information -->
     <div class="containerSearch">
-        <input id="searchInput" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons">
-        <div id="containerFilters"><button id="buttonFilters" class="btn btn-outline-secondary" type="button">Filters</button>
+        <input id="searchInput" type="text" class="form-control" placeholder="Search" aria-label="Recipient's username with two button addons">
+        <div id="containerFilters">
+            <div class="selectBtn">
+                <span class="btnText">Select Filter</span>
+                <span class="arrowDown">
+                    <i class="fa-solid fa-sliders"></i>
+                </span>
+            </div>
         </div>
         <button id="buttonSearch" class="btn btn-outline-secondary" type="button">Search</button>
     </div>
