@@ -24,20 +24,15 @@ header{
     background-color: rgba(211, 58, 2, 0.907);
     
 }
-#searchBar{
+/* #searchBar{
     padding: 10px;
     border: black solid 2px;
     width: 70%;
     color: rgba(161, 43, 0, 0.907);
     background-color: rgba(239, 239, 255, 0.918);
-}
-#filter{
-    padding: 10px;
-    border: black solid 2px;
-    width: 10%;
-    color: rgb(0, 0, 151);
-    background-color: rgba(211, 58, 2, 0.907);
-}
+} */
+
+
 #newsSection{
     margin: 30px;
     background-color: orangered;
