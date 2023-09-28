@@ -18,22 +18,22 @@ header{
 }
 
 #GameGenius{
-    padding-top: 20px;
-    width: 20%;
+    width: 12%;
     color: black;
     background-color: rgba(211, 58, 2, 0.907); 
     border-top-left-radius: 1em 5em; 
     border-bottom-left-radius: 1em 5em;
+    padding-top: 50px;
+    padding-left: 20px;
 }
 
 #gameGeniusTitle{
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     padding: 10px; 
     text-decoration: none;
     cursor: pointer;
-    padding: 50px;
-
+    font-weight: bold;
 }
 
 .containerSearch{
@@ -43,34 +43,66 @@ header{
 }
 
 #searchInput{
-    width: 80%;
+    width: 70%;
     padding: 20px;
     font-size: 20px;
+    display: flex;
+    flex-direction: row;
 }
+.inputGroup{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 
+}
 #containerFilters{
     position: relative;
-    max-width: 320px;
-    width: 15%;
+    
+    width: 100%;
     background-color: rgb(144, 144, 251);
     padding: 10px;
     text-align: center;
     padding-top: 25px;
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     font-weight: bold;
+    padding: 10px;
+}
+
+.btnSelectFilter{
+    padding:5px;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
     cursor: pointer;
+    margin-bottom: 15px;
 }
-
-.btnText{
-    padding-right: 20px;
+#iconFilters{
+   padding-right: 5px;
 }
-
+.formFilter{
+    display: flex;
+    flex-direction: row;
+}
+#platformSelector{
+    margin-left: 31px; 
+}
+#genreSelector{
+    margin-left: 53px; 
+}
+#playersSelector{
+    margin-left: 9px; 
+}
+#maturitySelector{
+    margin-left: 80px; 
+}
 #containerFilters:hover{
     background-color:rgb(211, 211, 255);
     transition: 0.3s;
 }
-
+.option{
+    cursor: pointer;
+}
 #buttonSearch{
     width: 15%;
     cursor: pointer;

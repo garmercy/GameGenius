@@ -18,23 +18,61 @@
     </div>
     <!-- This is the containerSearch, contains search input, another div with the filters and a button to submit the information -->
     <div class="containerSearch">
-        <input id="searchInput" type="text" class="form-control" placeholder="Search" aria-label="Recipient's username with two button addons">
-        <div id="containerFilters">
-            <div class="selectBtn">
-                <span class="btnText">Select Filter</span>
-                <span class="arrowDown">
-                    <i class="fa-solid fa-sliders"></i>
-                </span>
+        <div class="inputGroup">
+            <input id="searchInput" type="text" class="form-control" placeholder="Search" aria-label="Recipient's username with two button addons">
+            <div id="containerFilters">
+                <button class="btnSelectFilter" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i id="iconFilters" class="fa-solid fa-sliders"></i> Filters
+                </button>
+                <ul class="dropdown">
+                        <form class="formFilter" action="">Select platform
+                            <select name="" id="platformSelector">
+                                <option disabled selected>Platform</option>
+                                <option value="">PlayStation</option>
+                                <option value="">Nintendo</option>
+                                <option value="">Xbox</option>
+                                <option value="">Steam</option>
+                            </select>
+                        </form>
+                        <form class="formFilter" action="">Select genre
+                            <select name="" id="genreSelector">
+                                <option disabled selected>Genre</option>
+                                <option value="">Adventure</option>
+                                <option value="">Action</option>
+                                <option value="">Role-playing</option>
+                                <option value="">Multiplayer</option>
+                                <option value="">Fighting</option>
+                                <option value="">Racing</option>
+                                <option value="">Survival</option>
+                                <option value="">Horror</option>
+                                <option value="">Strategy</option>
+                                <option value="">Simulation</option>
+                                <option value="">Sports</option>
+                            </select>
+                        </form>
+                        <form class="formFilter" action="">Number of players
+                            <select name="" id="playersSelector">
+                                <option disabled selected>Players</option>
+                                <option value="">1 player</option>
+                                <option value="">2 playes</option>
+                                <option value="">More than 3 players</option>
+                            </select>
+                        </form>
+                        <form class="formFilter" action="">Maturity
+                            <select name="" id="maturitySelector">
+                                <option disabled selected>Maturity</option>
+                                <option value="">General (G)</option>
+                                <option value="">Parental Guidance (PG)</option>
+                                <option value="">Mature (M)</option>
+                                <option value="">Mature Accompanied (MA 15+)</option>
+                                <option value="">Restricted (R 18+)</option>
+                            </select>
+                        </form>
+                </ul>  
             </div>
-        </div>
+        </div>    
         <button id="buttonSearch" class="btn btn-outline-secondary" type="button">Search</button>
     </div>
-    <!-- <ul>
-        <li>
-            <span></span>
-        </li>
-    </ul> -->
-    
 </header>
 <section id="newsSection">
     <h1 id="gameTitle">Super Mario Bros. Wonder</h1>
