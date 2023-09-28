@@ -23,7 +23,7 @@ header{
     background-color: rgba(211, 58, 2, 0.907); 
     border-top-left-radius: 1em 5em; 
     border-bottom-left-radius: 1em 5em;
-    padding-top: 55px;
+    padding-top: 25px;
     padding-left: 30px;
 }
 #GameGenius:hover{
@@ -48,7 +48,7 @@ header{
 }
 
 #searchInput{
-    width: 70%;
+    width: 100%;
     padding: 20px;
     font-size: 20px;
     display: flex;
@@ -60,27 +60,16 @@ header{
     width: 100%;
 
 }
-#containerFilters{
-    position: relative;
-    
-    width: 100%;
-    background-color: rgb(144, 144, 251);
-    padding: 10px;
-    text-align: center;
-    padding-top: 25px;
-    font-size: 15px;
-    color: black;
-    font-weight: bold;
-    padding: 10px;
-}
+
 
 .btnSelectFilter{
-    padding:5px;
+    padding:25px;
     display: flex;
     flex-direction: row;
     font-size: 15px;
     cursor: pointer;
-    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
 }
 #iconFilters{
    padding-right: 5px;
@@ -88,6 +77,11 @@ header{
 .formFilter{
     display: flex;
     flex-direction: row;
+}
+/* This dropdown should appear after press filters */
+.dropdown{
+    display: none;
+    background-color: rgb(144, 144, 251);;
 }
 #platformSelector{
     margin-left: 31px; 
@@ -193,6 +187,4 @@ a{
     color: black;
     padding: 10px;
 }
-
-
 

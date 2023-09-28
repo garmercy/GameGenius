@@ -21,26 +21,27 @@
         <div class="inputGroup">
             <input id="searchInput" type="text" class="form-control" placeholder="Search" aria-label="Recipient's username with two button addons">
             <!-- This div contains a button that after being selected the ul will be displayed. -->
-            <div id="containerFilters">
-                <button class="btnSelectFilter" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i id="iconFilters" class="fa-solid fa-sliders"></i> Filters
-                </button>
-                <!-- Inside this ul they are 4 forms with some options of each select  -->
-                <ul class="dropdown">
-                        <form class="formFilter" action="">Select platform
-                            <select name="" id="platformSelector">
-                                <option disabled selected>Platform</option>
-                                <option value="">PlayStation</option>
-                                <option value="">Nintendo</option>
-                                <option value="">Xbox</option>
-                                <option value="">Steam</option>
-                            </select>
-                        </form>
-                        <form class="formFilter" action="">Select genre
-                            <select name="" id="genreSelector">
-                                <option disabled selected>Genre</option>
-                                <option value="">Adventure</option>
-                                <option value="">Action</option>
+            <!-- the button onlick should open the dropdown and close it -->
+            <button class="btnSelectFilter" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i id="iconFilters" class="fa-solid fa-sliders"></i> Filters
+            </button>
+            <!-- Inside this ul they are 4 forms with some options of each select  -->
+            <!-- This dropdown should appear after press filters  -->
+            <ul class="dropdown">
+                <form class="formFilter" action="">Select platform
+                        <select name="" id="platformSelector">
+                        <option disabled selected>Platform</option>
+                        <option value="">PlayStation</option>
+                        <option value="">Nintendo</option>
+                        <option value="">Xbox</option>
+                        <option value="">Steam</option>
+                    </select>
+                </form>
+                <form class="formFilter" action="">Select genre
+                    <select name="" id="genreSelector">
+                        <option disabled selected>Genre</option>
+                        <option value="">Adventure</option>
+                        <option value="">Action</option>
                                 <option value="">Role-playing</option>
                                 <option value="">Multiplayer</option>
                                 <option value="">Fighting</option>
@@ -71,7 +72,7 @@
                             </select>
                         </form>
                 </ul>  
-            </div>
+            <!-- </div> -->
         </div>  
         <!-- This button submit all the search info   -->
         <button id="buttonSearch" class="btn btn-outline-secondary" type="button">Search</button>
