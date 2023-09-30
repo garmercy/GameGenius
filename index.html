@@ -1,47 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- link to fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">    
-    <title>Document</title>
-</head>
+<html>
+    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GameGenius</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">  
+    <!-- Link to bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Link to css file -->
+    <link rel="stylesheet" href="Assets/css/style.css">
+  </head>
+
 <body>
-<header>
+    <!-- This it the titlelogo with a link -->
     <div id="GameGenius">
-        <a id="gameGeniusTitle" href="#">Game Genius!</a>
+    <a class="navbar-item" id="gameGeniusTitle" href="">Game Genius</a>
     </div>
-    <!-- This is the containerSearch, contains search input, another div with the filters and a button to submit the information -->
-    <div class="containerSearch">
-        <div class="inputGroup">
-            <input id="searchInput" type="text" class="form-control" placeholder="Search" aria-label="Recipient's username with two button addons">
-            <!-- This div contains a button that after being selected the ul will be displayed. -->
-            <!-- the button onlick should open the dropdown and close it -->
-            <button class="btnSelectFilter" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i id="iconFilters" class="fa-solid fa-sliders"></i> Filters
-            </button>
-            <!-- Inside this ul they are 4 forms with some options of each select  -->
-            <!-- This dropdown should appear after press filters  -->
-            <ul class="dropdown">
-                <form class="formFilter" action="">Select platform
-                        <select name="" id="platformSelector">
-                        <option disabled selected>Platform</option>
-                        <option value="">PlayStation</option>
-                        <option value="">Nintendo</option>
-                        <option value="">Xbox</option>
-                        <option value="">Steam</option>
-                    </select>
-                </form>
-                <form class="formFilter" action="">Select genre
-                    <select name="" id="genreSelector">
-                        <option disabled selected>Genre</option>
-                        <option value="">Adventure</option>
-                        <option value="">Action</option>
+    <!-- This is the navigation bar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation" id="containerNav">
+
+        <!-- When the media is not desktop the menu it is converted in a button with the navbar options -->
+       
+        <!-- This div contains: search input, filters with options and submit button -->
+        <div id="navbarBasicExample" class="navbar-menu is-active">
+            <div class="column is-three-quarters" id="search">
+                <input class="input is-rounded" type="text" placeholder="Info input">
+            </div>
+            <!-- This is filter link that contains selects and options -->
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable" >
+                    <a class="navbar-link" id="filters"><i id="iconFilters" class="fa-solid fa-sliders"></i>Filters</a>
+
+                    <div class="navbar-dropdown" id="filtersDropdown">
+                        <form class="formFilter" action=""><p class="filterSelectText">Select platform</p>
+                            <select id="platformSelector">
+                                <option disabled selected>Platform</option>
+                                <option value="">PlayStation</option>
+                                <option value="">Nintendo</option>
+                                <option value="">Xbox</option>
+                                <option value="">Steam</option>
+                            </select>
+                        </form>
+                        <form class="formFilter" action=""><p class="filterSelectText">Select genre</p>
+                            <select id="genreSelector">
+                                <option disabled selected>Genre</option>
+                                <option value="">Adventure</option>
+                                <option value="">Action</option>
                                 <option value="">Role-playing</option>
                                 <option value="">Multiplayer</option>
                                 <option value="">Fighting</option>
@@ -53,16 +58,16 @@
                                 <option value="">Sports</option>
                             </select>
                         </form>
-                        <form class="formFilter" action="">Number of players
-                            <select name="" id="playersSelector">
+                        <form class="formFilter" action=""><p class="filterSelectText">Number of players</p>
+                            <select id="playersSelector">
                                 <option disabled selected>Players</option>
                                 <option value="">1 player</option>
                                 <option value="">2 playes</option>
                                 <option value="">More than 3 players</option>
                             </select>
                         </form>
-                        <form class="formFilter" action="">Maturity
-                            <select name="" id="maturitySelector">
+                        <form class="formFilter" action=""><p class="filterSelectText">Maturity</p>
+                            <select id="maturitySelector">
                                 <option disabled selected>Maturity</option>
                                 <option value="">General (G)</option>
                                 <option value="">Parental Guidance (PG)</option>
@@ -71,32 +76,151 @@
                                 <option value="">Restricted (R 18+)</option>
                             </select>
                         </form>
-                </ul>  
-            <!-- </div> -->
-        </div>  
-        <!-- This button submit all the search info   -->
-        <button id="buttonSearch" class="btn btn-outline-secondary" type="button">Search</button>
-    </div>
-</header>
-<section id="newsSection">
-    <h1 id="gameTitle">Super Mario Bros. Wonder</h1>
-    <div id="gameContainerNews">
-        <div id="newsImage"></div>
-        <div id="textNews">
-            <h1>Title News</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex optio tempore dolorum libero, excepturi laboriosam quae, saepe veritatis nesciunt ducimus ipsa nisi vitae, corporis cumque ratione! Enim neque quod dignissimos?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore odit iste delectus, qui neque cupiditate expedita! At impedit architecto facilis tempora nulla maxime illum earum voluptas nemo fugiat, minima atque.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor perspiciatis excepturi eos quia error incidunt commodi laborum mollitia, adipisci, nemo illo rem pariatur asperiores exercitationem sed corporis assumenda rerum quae.</p>
-            <h1>Maturity rating</h1>
-            <p>Rating: 7.5</p>
+                    </div>
+                </div>  
+                <!-- This is the submit button that submits all the filters and the search -->
+                <div class="navbar-item" id="submitContainer">
+                    <div class="buttons">
+                        <a class="button is-danger"><strong>Submit</strong></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="containerIcons">
-            <h1>Available Platforms</h1>
-            <a href="">Nintendo</a>
-            <a href="">Plantform 1</a>
-            <a href="">Plantform 2</a>
+    </nav>
+<section id="mainSection">
+    <div class="containerNews">
+        
+        <h3 class="title has-text-centered is-size-9" id="newsTitle">
+            <i class="fa-regular fa-newspaper"></i> What's New!
+            <i class="fa-solid fa-star"></i>
+        </h3>
+    
+        <div class="columns mt-5 is-10 is-centered">
+            <div class="column is-10-tablet is-8-desktop">
+                <div class="card">
+                    <div class="card-image has-text-centered 1by0">
+                        <img src="Assets/css/images/assasing.png" alt="img-game">
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-size-5">Assassin's Creed Mirage</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">X-Box</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">PlayStation</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">iOS</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">Microsoft Windows</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">Gameplay video</a>
+                        </p>
+                    </footer>
+                </div>
+            </div>
         </div>
+
+        <div class="columns mt-5 is-10 is-centered">
+            <div class="column is-10-tablet is-8-desktop">
+                <div class="card">
+                    <div class="card-image has-text-centered 1by0">
+                        <img src="Assets/css/images/Starfield.png" alt="img-game">
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-size-5">Starfield</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">X-Box</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">Steam</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">Microsoft Windows</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">Gameplay video</a>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns mt-5 is-10 is-centered">
+            <div class="column is-10-tablet is-8-desktop">
+                <div class="card">
+                    <div class="card-image has-text-centered 1by0">
+                        <img src="Assets/css/images/Dead-Island-2.jpg" alt="img-game">
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-size-5">Dead Island 2</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">X-Box</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">PlayStation</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">Steam</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">Microsoft Windows</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">Gameplay video</a>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns mt-5 is-10 is-centered">
+            <div class="column is-10-tablet is-8-desktop">
+                <div class="card">
+                    <div class="card-image has-text-centered 1by0">
+                        <img src="Assets/css/images/Zelda.jpg" alt="img-game">
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-size-5">The Legend of Zelda: Tears of the Kingdom</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">Nintendo platform</a>
+                        </p>
+                        <p class="card-footer-item">
+                            <a href="" class="has-text-grey">Gameplay video</a>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
+
 </body>
 </html>

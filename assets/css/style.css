@@ -1,190 +1,48 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Mulish', sans-serif;  
-}
-
-body{
-    background: linear-gradient(to top, rgb(46, 60, 251), 35%,rgb(228, 125, 62),rgb(46, 60, 251) );
-}
-
-header{
-    display: flex;
-    flex-direction: row;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 30px;
-    border-radius: 1em/5em;
-}
-
-#GameGenius{
-    width: 12%;
-    color: black;
-    background-color: rgba(211, 58, 2, 0.907); 
-    border-top-left-radius: 1em 5em; 
-    border-bottom-left-radius: 1em 5em;
-    padding-top: 25px;
-    padding-left: 30px;
-}
-#GameGenius:hover{
-    background-color: rgba(255, 118, 68, 0.907);
-    transition: 0.3s;
-    text-decoration: none;
-    
-}
 #gameGeniusTitle{
-    font-size: 20px;
-    text-align: center;
-    padding: 10px; 
-    text-decoration: none;
-    cursor: pointer;
+    font-size: 30px;
     font-weight: bold;
+    background-color: rgb(37, 37, 100);
+    padding: 30px;
+    color: hsl(348, 100%, 61%);
 }
-
-.containerSearch{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+#filters{
+    margin-right: 0px;
+    margin-left: 0px;
+    background-color: rgb(90, 90, 255);
+    color: white;
 }
-
-#searchInput{
-    width: 100%;
-    padding: 20px;
-    font-size: 20px;
-    display: flex;
-    flex-direction: row;
+#filters:hover{
+    background-color: rgb(0, 0, 100);
 }
-.inputGroup{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-
-}
-
-
-.btnSelectFilter{
-    padding:25px;
-    display: flex;
-    flex-direction: row;
-    font-size: 15px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
+#filtersDropdown{
+    margin-right: 0px;
+    margin-left: 0px;
 }
 #iconFilters{
-   padding-right: 5px;
+    padding-right: 5px;
+}
+#submitContainer{
+    margin-right: 30px;
+}
+#search{
+    margin-left:0px
+}
+#containerNav{
+    background-color: rgb(90, 90, 255);
+}
+select{
+    font-size: 15px;
 }
 .formFilter{
-    display: flex;
-    flex-direction: row;
+    font-size: 18px;
+    padding: 15px;
+    background-color: rgb(90, 90, 255);
+    color: white;
 }
-/* This dropdown should appear after press filters */
-.dropdown{
-    display: none;
-    background-color: rgb(144, 144, 251);;
+body{
+    background-color: hsl(219, 70%, 96%);
 }
-#platformSelector{
-    margin-left: 31px; 
-}
-#genreSelector{
-    margin-left: 53px; 
-}
-#playersSelector{
-    margin-left: 9px; 
-}
-#maturitySelector{
-    margin-left: 80px; 
-}
-#containerFilters:hover{
-    background-color:rgb(211, 211, 255);
-    transition: 0.3s;
-}
-.option{
-    cursor: pointer;
-}
-#buttonSearch{
-    width: 15%;
-    cursor: pointer;
-    padding: 10px;
-    color: black;
-    background-color: rgba(211, 58, 2, 0.907);
-    font-size: 20px;
-    font-weight: bold;
-    border-top-right-radius: 1em 5em;
-    border-bottom-right-radius: 1em 5em;
-}
-
-#buttonSearch:hover{
-    background-color: rgba(255, 118, 68, 0.907);
-    transition: 0.3s;
-    text-decoration: none;
-    font-size: 25px;
-}
-
-#newsSection{
-    margin: 30px;
-    background-color: orangered;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-#newsImage{
-    padding: 40px;
-    border: black solid 2px;
-    margin-right: 10px;
-    width: 40%;
-    background-image: url(images/Chayka-Mario.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 30px 0px 30px 0px;
-    box-shadow:7px 7px 7px rgb(11, 11, 11); 
-}
-#textNews{
-    padding-left: 20px;
-    padding-right: 20px;
-    border: black solid 2px;
-    border-radius: 0px 30px 0px 30px;
-    box-shadow:7px 7px 7px rgb(11, 11, 11);
-    width:40%;
-    background: linear-gradient(to top, rgb(163, 169, 245), 35%, rgb(46, 60, 251) );
-}
-
-p{
-    text-align: justify;
-}
-h1{
-    font-size: 25px;
-    text-align: center;
-    padding: 10px;  
-}
-
-#gameTitle{
-    color: black;
-    font-weight: bolder;
-    font-size: 50px;
-    padding: 20px;
-}
-
-#gameContainerNews{
-    display: flex;
-    flex-direction: row;
-    height: 60vh;  
-}
-
-#containerIcons{
-    margin-left: 10px;
-    border: solid black 2px;
-    display: flex;
-    flex-direction: column;
-    width:20%;
-    border-radius: 0px 30px 0px 30px;
-    box-shadow:7px 7px 7px rgb(11, 11, 11);
-    background: linear-gradient(to top,rgba(211, 58, 2, 0.907), 35%,rgba(253, 166, 134, 0.907));
-}
-
-a{
-    text-decoration: none;
-    color: black;
-    padding: 10px;
+.containerNews{
+    margin-top: 60px;
 }
 
