@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GameGenius</title>
+    <!-- Link to font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">  
-    <!-- Link to bulma -->
+    <!-- Link to Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <!-- Link to css file -->
     <link rel="stylesheet" href="Assets/css/style.css">
@@ -19,15 +20,12 @@
     </div>
     <!-- This is the navigation bar -->
     <nav class="navbar" role="navigation" aria-label="main navigation" id="containerNav">
-
-        <!-- When the media is not desktop the menu it is converted in a button with the navbar options -->
-       
         <!-- This div contains: search input, filters with options and submit button -->
         <div id="navbarBasicExample" class="navbar-menu is-active">
             <div class="column is-three-quarters" id="search">
                 <input class="input is-rounded" type="text" placeholder="Info input">
             </div>
-            <!-- This is filter link that contains selects and options -->
+            <!-- This filter link contains selects and options -->
             <div class="navbar-end">
                 <div class="navbar-item has-dropdown is-hoverable" >
                     <a class="navbar-link" id="filters"><i id="iconFilters" class="fa-solid fa-sliders"></i>Filters</a>
@@ -87,7 +85,11 @@
             </div>
         </div>
     </nav>
+
+<!-- This section its the main section that contains containerNews div -->
 <section id="mainSection">
+
+    <!-- The container news contains a title and 4 divs that contains 4 cards. Each card contains: img div, text div and a footer with the platforms links -->
     <div class="containerNews">
         
         <h3 class="title has-text-centered is-size-9" id="newsTitle">
