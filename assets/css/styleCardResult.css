@@ -44,3 +44,7 @@ body{
     background-color: rgb(37, 37, 100);
     color: hsl(348, 100%, 61%);
 }
+#sortBy{
+    margin-right: 150px;
+    margin-top: 20px;
+}

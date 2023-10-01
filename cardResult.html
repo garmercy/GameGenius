@@ -15,9 +15,9 @@
 <header>
   <!-- This is the navigation bar -->
   <nav class="navbar" role="navigation" aria-label="main navigation" id="containerNav">
-    <!-- This it the titlelogo with a link -->
+    <!-- This titlelogo is connected with index.html-->
     <div class="navbar-brand" id="GameGenius">
-      <a class="navbar-item" id="gameGeniusTitle" href="">Game Genius</a>
+      <a class="navbar-item" id="gameGeniusTitle" href="index.html">Game Genius</a>
     </div>
     <!-- This div contains: search input, filters with options and submit button -->
     <div id="navbarBasicExample" class="navbar-menu is-active">
@@ -86,6 +86,47 @@
 </header>
 <!-- This section contains the search results cards -->
 <section>
+  <!-- SortBy filter -->
+  <div class="navbar-end">
+    <div class="navbar-item has-dropdown is-hoverable" >
+      <a class="navbar-link" id="sortBy" class="fa-solid fa-sliders">Sort by</a>
+      <div class="navbar-dropdown" id="filtersDropdown">
+        <form class="formFilter" action=""><p class="filterSelectText">Alphabetical order</p>
+          <select id="platformSelector">
+            <option disabled selected>yes/no</option>
+            <option value="">yes</option>
+            <option value="">no</option>
+          
+          </select>
+        </form>
+        <form class="formFilter" action=""><p class="filterSelectText">Popularity</p>
+          <select id="genreSelector">
+            <option disabled selected>5 Stars</option>
+            <option value="">4 Stars</option>
+            <option value="">3 Stars</option>
+            <option value="">2 Stars</option>
+            <option value="">1 Stars</option>
+          </select>
+        </form>
+        <form class="formFilter" action=""><p class="filterSelectText">Prices</p>
+          <select id="playersSelector">
+            <option disabled selected>prices</option>
+            <option value="">0-20$</option>
+            <option value="">20-50$</option>
+            <option value="">50-80$</option>
+            <option value="">80 - max $</option>
+          </select>
+        </form>
+        <form class="formFilter" action=""><p class="filterSelectText">New releases</p>
+          <select id="maturitySelector">
+            <option disabled selected>yes/no</option>
+            <option value="">yes</option>
+            <option value="">no</option>
+          </select>
+        </form>
+      </div>
+    </div>  
+  </div>
   <div class="box">
     <article class="media">
       <!-- This is the img card result -->
