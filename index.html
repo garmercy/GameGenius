@@ -64,7 +64,7 @@
                                 <option value="">More than 3 players</option>
                             </select>
                         </form>
-                        <form class="formFilter" action=""><p class="filterSelectText">Maturity</p>
+                        <form id="formMaturity" class="formFilter" action=""><p class="filterSelectText">Maturity</p>
                             <select id="maturitySelector">
                                 <option disabled selected>Maturity</option>
                                 <option value="">General (G)</option>
@@ -74,13 +74,16 @@
                                 <option value="">Restricted (R 18+)</option>
                             </select>
                         </form>
+                        <div class="buttons">
+                            <a id="buttonSearch" class="button is-danger" href="cardResult.html"><strong>Submit</strong></a>
+                        </div>
                     </div>
                 </div>  
                 <!-- This is the submit button that submits all the filters and the search -->
                 <div class="navbar-item" id="submitContainer">
                     <!-- This div contains a link to cardResult html -->
-                    <div class="buttons">
-                        <a id="buttonSearch" class="button is-danger" href="cardResult.html"><strong>Submit</strong></a>
+                    <div id="containerBtnFilter" class="buttons">
+                        <a id="buttonSearchFilters" class="button is-danger" href="cardResult.html"><strong>Submit</strong></a>
                     </div>
                 </div>
             </div>
