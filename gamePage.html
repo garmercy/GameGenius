@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Searchbar</title>
+  <!-- Link to fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">  
+  <!-- Link to bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- Link to css file -->
+  <link rel="stylesheet" href="assets/css/styleCardResult.css">
+</head>
+<body>
+<header>
+  <!-- This is the navigation bar -->
+  <nav class="navbar" role="navigation" aria-label="main navigation" id="containerNav">
+    <!-- This titlelogo is connected with index.html-->
+    <div class="navbar-brand" id="GameGenius">
+      <a class="navbar-item" id="gameGeniusTitle" href="index.html">Game Genius</a>
+    </div>
+    <!-- This div contains: search input, filters with options and submit button -->
+    <div id="navbarBasicExample" class="navbar-menu is-active">
+      <div class="column is-two-thirds" id="search">
+        <input class="input is-rounded" type="text" placeholder="Info input">
+      </div>
+      <!-- This is filter link that contains selects and options -->
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable" >
+          <a class="navbar-link" id="filters"><i id="iconFilters" class="fa-solid fa-sliders"></i>Filters</a>
+          <div class="navbar-dropdown" id="filtersDropdown">
+            <form class="formFilter" action=""><p class="filterSelectText">Select platform</p>
+              <select id="platformSelector">
+                <option disabled selected>Platform</option>
+                <option value="">PlayStation</option>
+                <option value="">Nintendo</option>
+                <option value="">Xbox</option>
+                <option value="">Steam</option>
+              </select>
+            </form>
+            <form class="formFilter" action=""><p class="filterSelectText">Select genre</p>
+              <select id="genreSelector">
+                <option disabled selected>Genre</option>
+                <option value="">Adventure</option>
+                <option value="">Action</option>
+                <option value="">Role-playing</option>
+                <option value="">Multiplayer</option>
+                <option value="">Fighting</option>
+                <option value="">Racing</option>
+                <option value="">Survival</option>
+                <option value="">Horror</option>
+                <option value="">Strategy</option>
+                <option value="">Simulation</option>
+                <option value="">Sports</option>
+              </select>
+            </form>
+            <form class="formFilter" action=""><p class="filterSelectText">Number of players</p>
+              <select id="playersSelector">
+                <option disabled selected>Players</option>
+                <option value="">1 player</option>
+                <option value="">2 playes</option>
+                <option value="">More than 3 players</option>
+              </select>
+            </form>
+            <form class="formFilter" action=""><p class="filterSelectText">Maturity</p>
+              <select id="maturitySelector">
+                <option disabled selected>Maturity</option>
+                <option value="">General (G)</option>
+                <option value="">Parental Guidance (PG)</option>
+                <option value="">Mature (M)</option>
+                <option value="">Mature Accompanied (MA 15+)</option>
+                <option value="">Restricted (R 18+)</option>
+              </select>
+            </form>
+          </div>
+        </div>  
+        <!-- This is the submit button that submits all the filters and the search -->
+        <div class="navbar-item" id="submitContainer">
+          <div class="buttons">
+            <a id="buttonSearch" class="button is-danger"><strong>Submit</strong></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="columns mt-5 is-10 is-centered">
+    <div class="column is-10-tablet is-8-desktop">
+        <div class="card">
+            <div class="card-image has-text-centered 1by0">
+                <img src="Assets/css/images/Dead-Island-2.jpg" alt="img-game">
+            </div>
+            <div class="card-content">
+                <p class="title is-size-5">Dead Island 2</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
+            </div>
+            <div id="containerRatingCardPage">
+                <p><i id="fullStar" class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i id="emptyStar" class="fa-regular fa-star"></i>
+                    Rating
+                </p>
+            </div>
+            <footer class="card-footer">
+                <p class="card-footer-item">
+                    <a id="linkXbox" href="" class="has-text-grey">X-Box</a>
+                </p>
+                <p class="card-footer-item">
+                    <a href="" id="linkPlayStation"  class="has-text-grey">PlayStation</a>
+                </p>
+                <p class="card-footer-item">
+                    <a href="" id="linkSteam"  class="has-text-grey">Steam</a>
+                </p>
+                <p class="card-footer-item">
+                    <a href="" id="linkMicrosoft"  class="has-text-grey">Microsoft Windows</a>
+                </p>
+                <p class="card-footer-item">
+                    <a href="" id="linkXbox"  class="has-text-grey">Gameplay video</a>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+
+</body>
+</html>
