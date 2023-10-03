@@ -225,7 +225,52 @@
     </div>
 </section>
 <section id="gameCards">
+    <div id="sortByContainer" class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable" >
+          <a class="navbar-link" id="sortBy" class="fa-solid fa-sliders">Sort by</a>
+          <div class="navbar-dropdown" id="filtersDropdown">
+            <form class="formFilter" action=""><p class="filterSelectText">Alphabetical order</p>
+              <select id="platformSelector">
+                <option disabled selected>yes/no</option>
+                <option value="">yes</option>
+                <option value="">no</option>
+              
+              </select>
+            </form>
+            <form class="formFilter" action=""><p class="filterSelectText">Popularity</p>
+              <select id="genreSelector">
+                <option disabled selected>5 Stars</option>
+                <option value="">4 Stars</option>
+                <option value="">3 Stars</option>
+                <option value="">2 Stars</option>
+                <option value="">1 Stars</option>
+              </select>
+            </form>
+            <form class="formFilter" action=""><p class="filterSelectText">Prices</p>
+              <select id="playersSelector">
+                <option disabled selected>prices</option>
+                <option value="">0-20$</option>
+                <option value="">20-50$</option>
+                <option value="">50-80$</option>
+                <option value="">80 - max $</option>
+              </select>
+            </form>
+            <form class="formFilter" action=""><p class="filterSelectText">New releases</p>
+              <select id="maturitySelector">
+                <option disabled selected>yes/no</option>
+                <option value="">yes</option>
+                <option value="">no</option>
+              </select>
+            </form>
+          </div>
+        </div>  
+    </div>
+      <!-- cards -->
     <ul id="gameLists"></ul>
+        <div class="box" id="gameCardsResult"></div>
+        
+    </ul>
+    
     <button id="prevBtn" class="btn btn-outline-secondary" type="button">Prev</button>
     <button id="nextBtn" class="btn btn-outline-secondary" type="button">Next</button>
 </section>

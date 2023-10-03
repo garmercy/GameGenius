@@ -48,3 +48,15 @@ body{
 #formMaturity{
     margin-bottom: 20px;
 }
+a{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+a:hover{
+    color: hsl(348, 100%, 61%);
+}
+img{
+    border-radius: 5px;
+    margin-top: 10px;
+}
