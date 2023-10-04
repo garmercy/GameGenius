@@ -23,17 +23,17 @@
 <body>
     <!-- This it the titlelogo with a link -->
     <div id="GameGenius">
-    <a class="navbar-item" id="gameGeniusTitle" href="#">Game Genius</a>
+        <a class="navbar-item" id="gameGeniusTitle" href="index.html">Game Genius</a>
     </div>
     <!-- This is the navigation bar -->
     <nav class="navbar" role="navigation" aria-label="main navigation" id="containerNav">
         <!-- This div contains: search input, filters with options and submit button -->
         <div id="navbarBasicExample" class="navbar-menu is-active">
-            <div class="column is-three-quarters" id="search">
+            <div class="column is-two-thirds" id="search">
                 <input id="searchInput" class="input is-rounded" type="text" placeholder="Info input">
             </div>
             <!-- This filter link contains selects and options -->
-            <div class="navbar-end">
+            <div class="navbar">
                 <div class="navbar-item has-dropdown is-hoverable" >
                     <a class="navbar-link" id="filters"><i id="iconFilters" class="fa-solid fa-sliders"></i>Filters</a>
 
@@ -81,9 +81,7 @@
                                 <option value="">Restricted (R 18+)</option>
                             </select>
                         </form>
-                        <div class="buttons">
-                            <button id="buttonSearchFilters" class="button is-danger" href=""><strong>Submit</strong></button>
-                        </div>
+                        
                     </div>
                 </div>  
                 <!-- This is the submit button that submits all the filters and the search -->
@@ -113,7 +111,7 @@
                         <img src="Assets/css/images/assasing.png" alt="img-game">
                     </div>
                     <div class="card-content" id="textNews">
-                        <a href=""><p class="title is-size-5" id="gameTitle">Assassin's Creed Mirage</p></a>
+                        <a href="gamePage.html"><p class="title is-size-5" id="gameTitle">Assassin's Creed Mirage</p></a>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
                     </div>
@@ -145,7 +143,7 @@
                         <img src="Assets/css/images/Starfield.png" alt="img-game">
                     </div>
                     <div class="card-content" id="textNews">
-                        <a href=""><p class="title is-size-5" id="gameTitle">Starfield</p></a>
+                        <a href="gamePage.html"><p class="title is-size-5" id="gameTitle">Starfield</p></a>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
                     </div>
@@ -174,7 +172,7 @@
                         <img src="Assets/css/images/Dead-Island-2.jpg" alt="img-game">
                     </div>
                     <div class="card-content" id="textNews">
-                        <a href=""><p class="title is-size-5" id="gameTitle">Dead Island 2</p></a>
+                        <a href="gamePage.html"><p class="title is-size-5" id="gameTitle">Dead Island 2</p></a>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
                     </div>
@@ -206,7 +204,7 @@
                         <img src="Assets/css/images/Zelda.jpg" alt="img-game">
                     </div>
                     <div class="card-content" id="textNews">
-                        <a href=""><p class="title is-size-5" id="gameTitle">The Legend of Zelda: Tears of the Kingdom</p></a>
+                        <a href="gamePage.html"><p class="title is-size-5" id="gameTitle">The Legend of Zelda: Tears of the Kingdom</p></a>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!</p>
                     </div>
@@ -224,21 +222,15 @@
 
     </div>
 </section>
-<div class="navbar-item" id="submitContainer">
-    <!--This is the sort by botton-->
-    <button id="buttonSearch" class="button is-warning" ><strong>Sort by</strong></button>
-</div>
+
+    <!--This is the sort by-->
+    
 
 <section id="gameCards">
-   
-      <!-- cards -->
+    <button id="buttonSortBy" class="button is-warning" ><strong>Sort by</strong></button>
     <ul id="gameLists"></ul>
-        <div class="box" id="gameCardsResult"></div>
-        
-    </ul>
-    
-    <button id="prevBtn" class="btn btn-outline-secondary" type="button">Prev</button>
-    <button id="nextBtn" class="btn btn-outline-secondary" type="button">Next</button>
+    <button id="prevBtn" class="pagination-previous" type="button">Prev</button>
+    <button id="nextBtn" class="pagination-next" type="button">Next</button>
 </section>
 <script src="assets/js/script.js"></script>
 

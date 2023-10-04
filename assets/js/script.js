@@ -1,6 +1,7 @@
 var searchButtonEl = $('#buttonSearch');
 var gamelistEl = $('#gameLists');
 var gameCards = $('#gameCards');
+var buttonSortBy = $('#buttonSortBy');
 
 var prevBtnEl = $('#prevBtn');
 var nextBtnEl = $('#nextBtn');
@@ -29,6 +30,7 @@ function rawgGames(url) {
             // Call function to generate game lists based on data results
             generateGameList(data.results);
             // Display prev and next buttons
+            buttonSortBy.css('display', 'block');
             prevBtnEl.css('display', 'inline');
             nextBtnEl.css('display', 'inline');
             prev = data.previous
@@ -82,14 +84,15 @@ function generateGameList(searchResults){
 
         // TODO need to add class name for css game cards
         var gameListItemEl = $('<li class="box">');
-        var gameImgEL = $('<img>').attr('src', searchResults[i].background_image);
+        var gameImgEL = $('<img class="imgCard">').attr('src', searchResults[i].background_image);
         // sample might be removed
-        gameImgEL.css({'width' : '10%' , 'height' : '10%'});
+        
+        // gameImgEL.css({'width' : '170px' , 'height' : '120px'});
         var gameNameEl = $('<a>').text(searchResults[i].name).attr('href',"gamePage.html");
         gameNameEl.css('display', 'block');
-        var gameTextCard=$('<p>').text('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!')
-        gameTextCard.css('display', 'inline')
-        gameListItemEl.append(gameNameEl, gameImgEL, gameTextCard);
+        // var gameTextCard=$('<p>').text('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!')
+        // gameTextCard.css('display', 'inline')
+        gameListItemEl.append(gameNameEl, gameImgEL);
         gamelistEl.append(gameListItemEl);
     }
 }
@@ -166,8 +169,8 @@ function init(){
     // Hide pagination buttons on landing page
     prevBtnEl.css('display', 'none');
     nextBtnEl.css('display', 'none');
-    gameCardsResultEl.css('display', 'none');
-    sortByContainerEl.css('display', 'none');
+    buttonSortBy.css('display', 'none');
+
     localStorage.setItem('prev', JSON.stringify(null));
     localStorage.setItem('next', JSON.stringify(null));
 
