@@ -6,7 +6,6 @@ var buttonSortBy = $('#buttonSortBy');
 var prevBtnEl = $('#prevBtn');
 var nextBtnEl = $('#nextBtn');
 var gameCardsResultEl = $("#gameCardsResult");
-var sortByContainerEl = $("#sortByContainer");
 
 var prev;
 var next;
@@ -38,22 +37,23 @@ function rawgGames(url) {
             localStorage.setItem('prev', JSON.stringify(prev));
             localStorage.setItem('next', JSON.stringify(next));
             // Check if prev and next is null or not
-            if (prev === null){
+            if (prev === null) {
                 prevBtnEl.css('display', 'none');
-            } else if (next === null){
+            } else if (next === null) {
                 nextBtnEl.css('display', 'none');
-            } 
+            }
         })
 }
 
 // When search button is clicked add paremeters to endpoint and call api
-function handleSearchButton(){
+function handleSearchButton() {
     gamelistEl.empty();
     console.log('SEARCH PRESSED');
-    var searchInputEl = '&search=';
+    // limit search to 10 results per page
+    var searchInputEl = '&page_size=10&search=';
     searchInputEl += $('#searchInput').val().trim();
-    searchInputEl += filterGenres();
-    rawgGames(rawgUrl+apiKey+searchInputEl);
+    // searchInputEl += filterGenres();
+    rawgGames(rawgUrl + apiKey + searchInputEl);
 }
 
 // Search button event
@@ -61,16 +61,16 @@ searchButtonEl.on('click', handleSearchButton);
 // Pressing enter key
 $('#searchInput').keypress(function (e) {
     var key = e.which;
-    if(key == 13)  // the enter key code
-     {
+    if (key == 13)  // the enter key code
+    {
         searchButtonEl.click();
-       return false;  
-     }
-});  
+        return false;
+    }
+});
 
 
 // TODO: Need add a function for filter parameters and add it to search or call another api
-function filterGenres(){
+function filterGenres() {
     var genreParam = '&genres=';
     // Get from genres tags inputs and append to genreParam var
     genreParam += 'racing'
@@ -78,25 +78,73 @@ function filterGenres(){
 }
 
 
-function generateGameList(searchResults){
-    for (var i = 0; i < searchResults.length; i++){
-        // console.log(searchResults[i].name);
+function generateGameList(searchResults) {
+    for (var i = 0; i < searchResults.length; i++) {
+        console.log(searchResults[i].name);
 
-        // TODO need to add class name for css game cards
+        // Create list for game results
         var gameListItemEl = $('<li class="box">');
         var gameImgEL = $('<img class="imgCard">').attr('src', searchResults[i].background_image);
-        // sample might be removed
-        
-        // gameImgEL.css({'width' : '170px' , 'height' : '120px'});
-        var gameNameEl = $('<a>').text(searchResults[i].name).attr('href',"gamePage.html");
+        // Create link element for clickable game title
+        var gameNameEl = $('<a>').text(searchResults[i].name).attr('href', "gamePage.html");
         gameNameEl.css('display', 'block');
-        // var gameTextCard=$('<p>').text('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate reprehenderit quam distinctio hic ea eveniet voluptatum cum culpa? Veniam temporibus cum excepturi et ullam nostrum quos qui delectus culpa. Vero!')
-        // gameTextCard.css('display', 'inline')
-        gameListItemEl.append(gameNameEl, gameImgEL);
+        // Call getRating to get game rating
+        var gameRatingEl = getRating(searchResults[i].rating_top);
+        // Call getPlatformList to create available platforms in icons
+        var gamePlatformEl = getPlatformList(searchResults[i]);
+        // Append everything to list element
+        gameListItemEl.append(gameNameEl, gameImgEL, gameRatingEl, gamePlatformEl);
         gamelistEl.append(gameListItemEl);
     }
 }
 
+function getPlatformList(results) {
+    var iconRef = ['pc', 'playstation', 'xbox', 'ios', 'nintendo'];
+    var iconArr = ['windows', 'playstation', 'xbox', 'apple', 'nintendo'];
+    var iconClass = ['fa-brands fa-windows', 'fa-brands fa-playstation', 'fa-brands fa-xbox', 'fa-brands fa-apple', 'fa-solid fa-gamepad'];
+
+    var platformArr = [];
+    var platforms = results.parent_platforms
+    var divPlatform = $('<div class="level-left">');
+
+    for (var i = 0; i < platforms.length; i++) {
+        platformArr.push(platforms[i].platform.slug);
+    }
+    console.log(platformArr);
+
+    for (var i = 0; i < platformArr.length; i++) {
+        if (iconRef.includes(platformArr[i])) {
+            var iconIndex = iconRef.indexOf(platformArr[i]);
+            var icons = $('<i>').addClass(iconClass[iconIndex]);
+            var span = $('<span class="icon is-small">');
+            span.append(icons);
+            var link = $('<a id="' + iconArr[iconIndex] + '" class="level-item"  aria-label="reply">')
+            link.append(span);
+            divPlatform.append(link);
+        }
+    }
+    return divPlatform;
+}
+
+function getRating(num) {
+    console.log(num);
+    var divRating = $('<p>')
+    
+    for (var i = 1; i <= 5; i++) {
+        var rating = $('<i>');
+        if (num >= i) {
+            // create full star
+            rating.addClass('fa-solid fa-star');
+        } else {
+            // create empty star
+            rating.addClass('fa-regular fa-star');
+        }
+       
+        divRating.append(rating);
+    }
+    divRating.append(' Rating');
+    return divRating;
+}
 
 // Initial Pagination functions
 // When next button is clicked move next results
@@ -120,7 +168,7 @@ prevBtnEl.on('click', function () {
 
 // List of genres available for RAWG API
 // returns an array of genres, we can add to genre filter
-function getGenres(){
+function getGenres() {
     var genreList = [];
     var url = 'https://api.rawg.io/api/genres' + apiKey;
     fetch(url)
@@ -130,7 +178,7 @@ function getGenres(){
         // Do something/ call a function
         .then(function (data) {
             console.log(data);
-            for (var i =0; i<data.results.length; i++) {
+            for (var i = 0; i < data.results.length; i++) {
                 genreList.push(data.results[i].slug);
             }
             console.log(genreList);
@@ -140,20 +188,15 @@ function getGenres(){
 
 // ADD something here for autocomplete filters.
 
-
-
-
-
 // List of Platforms available for RAWG API
-function getPlatforms(){
-    var url = 'https://api.rawg.io/api/platforms' + apiKey;
+function getPlatforms() {
+    var url = 'https://api.rawg.io/api/platforms/lists/parents' + apiKey;
     fetch(url)
         .then(function (response) {
             return response.json();
         })
         // Do something/ call a function
         .then(function (data) {
-            console.log(data);
             console.log(data);
         })
 }
@@ -165,16 +208,17 @@ $('#gameGeniusTitle').on('click', function () {
 })
 
 // Initialize page
-function init(){
+function init() {
     // Hide pagination buttons on landing page
     prevBtnEl.css('display', 'none');
     nextBtnEl.css('display', 'none');
     buttonSortBy.css('display', 'none');
-
     localStorage.setItem('prev', JSON.stringify(null));
     localStorage.setItem('next', JSON.stringify(null));
-
-    getGenres();
+    // console.log('GENRE--------');
+    // getGenres();
+    // console.log('PLATFORM--------');
+    getPlatforms();
 
 }
 init();
