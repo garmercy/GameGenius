@@ -6,6 +6,9 @@ var buttonSortBy = $('#buttonSortBy');
 var prevBtnEl = $('#prevBtn');
 var nextBtnEl = $('#nextBtn');
 var gameCardsResultEl = $("#gameCardsResult");
+var sortByContainerEl = $("#sortByContainer");
+
+
 
 var prev;
 var next;
@@ -29,7 +32,9 @@ function rawgGames(url) {
             // Call function to generate game lists based on data results
             generateGameList(data.results);
             // Display prev and next buttons
+
             buttonSortBy.css('display', 'block');
+
             prevBtnEl.css('display', 'inline');
             nextBtnEl.css('display', 'inline');
             prev = data.previous
@@ -73,7 +78,7 @@ $('#searchInput').keypress(function (e) {
 function filterGenres() {
     var genreParam = '&genres=';
     // Get from genres tags inputs and append to genreParam var
-    genreParam += 'racing'
+    genreParam += ''
     return genreParam;
 }
 
@@ -84,9 +89,11 @@ function generateGameList(searchResults) {
 
         // Create list for game results
         var gameListItemEl = $('<li class="box">');
+      
         var gameImgEL = $('<img class="imgCard">').attr('src', searchResults[i].background_image);
         // Create link element for clickable game title
         var gameNameEl = $('<a>').text(searchResults[i].name).attr('href', "gamePage.html");
+        gameNameEl.addClass('gameLink');
         gameNameEl.css('display', 'block');
         // Call getRating to get game rating
         var gameRatingEl = getRating(searchResults[i].rating_top);
@@ -94,10 +101,21 @@ function generateGameList(searchResults) {
         var gamePlatformEl = getPlatformList(searchResults[i]);
         // Append everything to list element
         gameListItemEl.append(gameNameEl, gameImgEL, gameRatingEl, gamePlatformEl);
+
         gamelistEl.append(gameListItemEl);
     }
 }
 
+function handleGameLink(event){
+var gameLinkClicked = (event.target);
+
+}
+
+
+gamelistEl.on('click', '.gameLink', handleGameLink);
+
+
+// Generate platforms
 function getPlatformList(results) {
     var iconRef = ['pc', 'playstation', 'xbox', 'ios', 'nintendo'];
     var iconArr = ['windows', 'playstation', 'xbox', 'apple', 'nintendo'];
@@ -126,6 +144,7 @@ function getPlatformList(results) {
     return divPlatform;
 }
 
+// Generate ratings
 function getRating(num) {
     console.log(num);
     var divRating = $('<p>')
@@ -213,6 +232,7 @@ function init() {
     prevBtnEl.css('display', 'none');
     nextBtnEl.css('display', 'none');
     buttonSortBy.css('display', 'none');
+
     localStorage.setItem('prev', JSON.stringify(null));
     localStorage.setItem('next', JSON.stringify(null));
     // console.log('GENRE--------');
